@@ -2,6 +2,7 @@ metadata.atmovies.com.tw
 ========================
 
 [XBMC]開眼電影網(AtMovies)正體中文刮削器(scraper) 
+
 給 XBMC 使用的正體中文電影資料 scraper
 
 接觸 XBMC 也有一段時間了,很感謝之前一些大大的貢獻, 讓我們得以在XBMC裡 看到正體中文的電影資料, 如 mingjen 兄 的 https://code.google.com/p/traditional-chinese-xbmc-scrapers/
@@ -16,11 +17,13 @@ metadata.atmovies.com.tw
 
 為了將 scraper 送進官方庫裡,以方便讓更多人可以直接點選安裝,不用再另外下載, 
 所以從 AtMovies_v1.4.4 , Yahoo_v1.0.3 開始, 拆成2個專案, 以符合要求, 
+
 若要查看之前的的原始碼, 請到原來的專案 
 https://github.com/angp/xbmc-traditional-chinese-scraper
 
 Yahoo!奇摩電影 scraper: https://github.com/angp/metadata.tw.movie.yahoo.com
 
 直接下載:
+
 AtMovies: https://github.com/angp/metadata.atmovies.com.tw/archive/atmovies_v1.4.4.zip
 Yahoo!Movie : https://github.com/angp/metadata.tw.movie.yahoo.com/archive/yahoo_v1.0.3.zip
