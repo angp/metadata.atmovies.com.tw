@@ -2,7 +2,10 @@
 	<CreateSearchUrl dest="3">
 		<RegExp input="$$2" output="&lt;url spoof=&quot;http://search.atmovies.com.tw&quot; post=&quot;true&quot;&gt;http://search.atmovies.com.tw/search/search.cfm?action=home&amp;amp;fr=atmovies-cfm&amp;amp;type=F&amp;amp;search_term=\1&lt;/url&gt;" dest="3">
       <RegExp input="$$1" output="\1" dest="2">
-				<expression noclean="12" />
+				<expression noclean="1,2" />
+			</RegExp>
+      <RegExp input="$$2" output="\1" dest="2">
+				<expression noclean="1,2">%5b.*%5d(.*)</expression>
 			</RegExp>
       <RegExp input="$$2" output="\1:\2" dest="2">
 				<expression noclean="1,2">(.*)：(.*)</expression>
