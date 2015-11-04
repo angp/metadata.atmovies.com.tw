@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><scraper framework="1.1" date="2013-09-10" name="New Scraper" content="movies" language="en">
+﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="1.1" date="2015-11-04" name="New Scraper" content="movies" language="en">
 	<CreateSearchUrl dest="3">
 		<RegExp input="$$2" output="&lt;url spoof=&quot;http://search.atmovies.com.tw&quot; post=&quot;true&quot;&gt;http://search.atmovies.com.tw/search/search.cfm?action=home&amp;amp;fr=atmovies-cfm&amp;amp;type=F&amp;amp;search_term=\1&lt;/url&gt;" dest="3">
-      <RegExp input="$$1" output="\1" dest="2">
+			<RegExp input="$$1" output="\1" dest="2">
 				<expression noclean="1,2" />
 			</RegExp>
-      <RegExp input="$$2" output="\1" dest="2">
+			<RegExp input="$$2" output="\1" dest="2">
 				<expression noclean="1,2">%5b.*%5d(.*)</expression>
 			</RegExp>
-      <RegExp input="$$2" output="\1:\2" dest="2">
+			<RegExp input="$$2" output="\1:\2" dest="2">
 				<expression noclean="1,2">(.*)：(.*)</expression>
 			</RegExp>
-			<expression/>
+			<expression />
 		</RegExp>
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
@@ -46,9 +46,9 @@
 				<RegExp input="$$1" output="\1" dest="4">
 					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[ \s]*&lt;/span&gt;</expression>
 				</RegExp>
-        <RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
-				  <expression noclean="1">^The (.*)</expression>
-			  </RegExp>
+				<RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
+					<expression noclean="1">^The (.*)</expression>
+				</RegExp>
 				<expression>1</expression>
 			</RegExp>
 			<!--title chinese (english)-->
@@ -59,11 +59,11 @@
 				<RegExp input="$$1" output="\1" dest="6">
 					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[ \s]*&lt;/span&gt;</expression>
 				</RegExp>
-        <RegExp conditional="titleEliminateThe" input="$$6" output="\1" dest="6">
-				  <expression noclean="1">^The (.*)</expression>
-			  </RegExp>
+				<RegExp conditional="titleEliminateThe" input="$$6" output="\1" dest="6">
+					<expression noclean="1">^The (.*)</expression>
+				</RegExp>
 				<RegExp input="$$6" output=" (\1)" dest="4+">
-				  <expression />
+					<expression />
 				</RegExp>
 				<expression>2</expression>
 			</RegExp>
@@ -72,9 +72,9 @@
 				<RegExp input="$$1" output="\1" dest="4">
 					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;</expression>
 				</RegExp>
-        <RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
-				  <expression noclean="1">^The (.*)</expression>
-			  </RegExp>
+				<RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
+					<expression noclean="1">^The (.*)</expression>
+				</RegExp>
 				<RegExp input="$$1" output=" (\1)" dest="4+">
 					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;&lt;br&gt;</expression>
 				</RegExp>
@@ -135,7 +135,7 @@
 			<RegExp conditional="useTMDBCastFirst" input="$$6" output="1" dest="8">
 				<expression>China</expression>
 			</RegExp>
-      <RegExp conditional="useTMDBCastFirst" input="$$6" output="0" dest="8">
+			<RegExp conditional="useTMDBCastFirst" input="$$6" output="0" dest="8">
 				<expression>USA</expression>
 			</RegExp>
 			<RegExp conditional="useTMDBCastFirst" input="$$8" output="&lt;chain function=&quot;GetTMDBCastByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
@@ -257,8 +257,8 @@
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
-	</ParseFanart>  
-  <!-- 請注意, 此 TMDB api_key 為我個人為此 scraper 所申請, 若要使用在別處, 請自行至 TMDB (www.themoviedb.org) 免費申請, 謝謝 -->
+	</ParseFanart>
+	<!-- 請注意, 此 TMDB api_key 為我個人為此 scraper 所申請, 若要使用在別處, 請自行至 TMDB (www.themoviedb.org) 免費申請, 謝謝 -->
 	<GetZhGenresByTMDBId dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;url function=&quot;TranslateTMDBGenres&quot; cache=&quot;tmdb-en-\1.json&quot;&gt;http://api.themoviedb.org/3/movie/\1?api_key=d955d8f02a3f2480a51881fe4c96f10e&amp;amp;language=en&lt;/url&gt;" dest="5">
