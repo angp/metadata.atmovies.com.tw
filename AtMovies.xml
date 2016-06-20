@@ -241,7 +241,7 @@
 			<RegExp input="$$1" output="\1" dest="7">
 				<expression clear="yes" noclean="1">&lt;div class=showphoto&gt;[\s]*&lt;h2&gt;【劇照】&lt;/h2&gt;\s*(.*?)\s*&lt;/UL&gt;\s*&lt;/div&gt;</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;thumb spoof=&quot;http://app2.atmovies.com.tw&quot; preview=&quot;\2&quot;&gt;\1&lt;/thumb&gt;" dest="2">
+			<RegExp input="$$7" output="&lt;thumb spoof=&quot;http://app2.atmovies.com.tw/photo&quot; preview=&quot;\2|Referer=http%3a%2f%2fapp2.atmovies.com.tw%2fphoto&quot;&gt;\1|Referer=http%3a%2f%2fapp2.atmovies.com.tw%2fphoto&lt;/thumb&gt;" dest="2">
 				<expression repeat="yes">&lt;a href="(.[^\"]*)".[^&gt;]*&gt;\s*&lt;img src="(.[^\"]*)"&gt;&lt;/a&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
